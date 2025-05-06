@@ -26,7 +26,7 @@ const TIME_SUFFIX_MAP = {
   'More than 5 hrs': '(8h)'
 };
 
-
+const INDENT = '\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0';  // three NBSPs
 const COLOR_DOT = '🔵';
 function fetchNotionRows(){
   let all=[], cursor=null;
@@ -143,7 +143,7 @@ function onHomepage(e){
         // Add task title (bold)
 section.addWidget(
   CardService.newDecoratedText()
-    .setText(`<b>${taskTitle}</b>`)
+    .setText(`<b>${INDENT}${taskTitle}</b>`)
     .setOnClickAction(
       CardService.newAction()
         .setFunctionName('addToTasks')
